@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            height: 300px;
+            width: 400px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>
+<script>
+   // api=AIzaSyBOC34yUbuq9BcZFYKkm_L2VYTngdW-WoU
+   const url="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=thor&key=AIzaSyBOC34yUbuq9BcZFYKkm_L2VYTngdW-WoU"
+   async function display(){
+       try{
+           let res=await fetch(url)
+           res=await res.json()
+           res=res.items
+           console.log(res)
+           muvidisplay(res)
+       }
+       catch(err){
+           console.log(err)
+       }
+   }
+   display();
+  function muvidisplay(res){
+      res.forEach(function(el){
+        iframe=document.createElement("iframe")
+        iframe.src="https://www.youtube.com/embed/"+el.id.videoId
+        iframe.allow="fullscreen";
+        document.querySelector("#display").append(iframe)
+        
+      })
+
+   }
+
+//    <iframe width="560" height="315" 
+//    src="https://www.youtube.com/embed/Z_vaudmjjfg" 
+//    title="YouTube video player" 
+//    frameborder="0" 
+//    allow="accelerometer;
+//     autoplay; 
+//     clipboard-write;
+//      encrypted-media; 
+//      gyroscope;
+//       picture-in-picture"
+//        allowfullscreen>
+//        </iframe>
+</script>
