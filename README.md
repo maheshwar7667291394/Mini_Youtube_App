@@ -19,7 +19,9 @@
     <a href="#Contributors">Contributors</a> &#10023;
   </p>
   
-BathBodyWorks is a popular American Brand. BathBodyWorks is a retail store chain which came in Ecommerce buisness to sell their products. This Company sells products like lotions, soap, daily perfumes,candles,etc. This was a collaborative project buit by team of 4 members in 5 days.
+A Mini Youtube app where people can watch movies ,songs without any advertisement.</br>
+Tech-Stack:- CSS, HTML, JavaScript.</br>
+Role :- fetched Youtube API and implemented youtube aap.
   
 
 <br />
